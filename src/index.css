@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  /* background-image: linear-gradient(to right, #0d0b1f, #1f1d32, #28283c); */
+  background-image:url('../public/background8.jpg');
+  background-repeat:no-repeat;
+  background-size: cover ;
+}
