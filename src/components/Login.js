@@ -14,25 +14,25 @@ const Login = () => {
     
           App.getBal();
         
-          if(chainId === "0x3") {
-            App.setChain("Ropsten")
-            App.setCurrency("RopstenEther")
-            App.setSymbol("rEth")
+          if(chainId === "0x5") {
+            App.setChain("Goerli")
+            App.setCurrency("GoerliEther")
+            App.setSymbol("Eth")
             App.setLogin(true);
-            App.setPaypalContractAddress('0x792fE1A901CE52a9D9358662048A86327f743F7f')
-            App.setExplorer("https://ropsten.etherscan.io")
-          } else if(chainId === "0x4") {
-            App.setChain("Rinkeby")
-            App.setCurrency("RinkebyEther")
-            App.setSymbol("rEth")
+            App.setPaypalContractAddress('0x60532B881dB44785E6F36DB5c4Bd3971b072E42D')
+            App.setExplorer("https://goerli.etherscan.io")
+          } else if(chainId === "0xaa36a7") {
+            App.setChain("Sepolia")
+            App.setCurrency("SepoliaEther")
+            App.setSymbol("SepoliaETH")
             App.setLogin(true);
-            App.setPaypalContractAddress('0x964ae05511BC7C2aa3356B489Badd5e7c5bAde15')
-            App.setExplorer("https://rinkeby.etherscan.io")
+            App.setPaypalContractAddress('0x3A6C95B553EB37003299357638fF7D5B5F79bdfe')
+            App.setExplorer("https://sepolia.etherscan.io")
           } else if(chainId === "0x13881") {
             App.setChain("Polygon")
             App.setCurrency("Matic")
             App.setSymbol("Matic")
-            App.setPaypalContractAddress('0x9Ad232e2D3812d5E915B864119f8212D51BFB9F5')
+            App.setPaypalContractAddress('0x04A741126973A330Cf8CB81EB056017864766c12')
             App.setLogin(true);
             App.setExplorer("https://mumbai.polygonscan.com")
           } else {

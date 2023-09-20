@@ -5,8 +5,8 @@ const Header = () => {
     const {ethereum} = window;
     const App = useContext(AppState);
     const [showChains, setShowChains] = useState(false);
-    const changeToRosten = async () => {
-        await ethereum.request({method: "wallet_switchEthereumChain", params: [{chainId: "0x3"}]})
+    const changeToGoerli = async () => {
+        await ethereum.request({method: "wallet_switchEthereumChain", params: [{chainId: "0x5"}]})
         setShowChains(false)
       }
       
@@ -15,8 +15,8 @@ const Header = () => {
         setShowChains(false)
       }
       
-      const changeToRinkeby = async () => {
-        await ethereum.request({method: "wallet_switchEthereumChain", params: [{chainId: "0x4"}]})
+      const changeToSepolia = async () => {
+        await ethereum.request({method: "wallet_switchEthereumChain", params: [{chainId: "0xaa36a7"}]})
         setShowChains(false)
       }
   return (
@@ -42,7 +42,7 @@ const Header = () => {
 
         {/* Chains Section */}
         <div onClick={() => setShowChains(true)} className="text-xl py-2 px-4 mr-2 font-sans border-opacity-60 border-2 border-blue-900 font-medium cursor-pointer bg-black text-white rounded-lg flex justify-between items-center">
-          {App.chain === "Ropsten" || App.chain === "Rinkeby" ? (
+          {App.chain === "Goerli" || App.chain === "Sepolia" ? (
             <img className="h-6 mr-2" alt="" src="ethereum.jpg" />
           ) : (
             <img className="h-6 mr-2" alt="" src="polygon.png" />
@@ -53,9 +53,9 @@ const Header = () => {
         {/* All Chains */}
         <div className={`${showChains ? "" : "hidden"} absolute right-0 z-50`}>
           {/* Ropsten */}
-          <div onClick={changeToRosten} className="text-xl py-2 px-4 mr-2 font-sans border-opacity-60 border-2 border-blue-900 font-medium cursor-pointer hover:bg-gray-900 bg-black text-white rounded-lg flex justify-between items-center">
+          <div onClick={changeToGoerli} className="text-xl py-2 px-4 mr-2 font-sans border-opacity-60 border-2 border-blue-900 font-medium cursor-pointer hover:bg-gray-900 bg-black text-white rounded-lg flex justify-between items-center">
             <img className="h-6 mr-2" alt="" src="ethereum.jpg" />
-            Ropsten
+            Goerli
           </div>
 
           {/* Polygon */}
@@ -65,9 +65,9 @@ const Header = () => {
           </div>
 
           {/* Rinkeby */}
-          <div onClick={changeToRinkeby} className="text-xl py-2 px-4 mr-2 font-sans border-opacity-60 border-2 border-blue-900 font-medium cursor-pointer hover:bg-gray-900 bg-black text-white rounded-lg flex justify-between items-center">
+          <div onClick={changeToSepolia} className="text-xl py-2 px-4 mr-2 font-sans border-opacity-60 border-2 border-blue-900 font-medium cursor-pointer hover:bg-gray-900 bg-black text-white rounded-lg flex justify-between items-center">
             <img className="h-6 mr-2" alt="" src="ethereum.jpg" />
-            Rinkeby
+            Sepolia
           </div>
 
           {/* Close The chains */}

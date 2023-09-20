@@ -78,12 +78,12 @@ const selectToken = async () => {
 
 const removeToken = async () => {
   try {
-  if(chain === "Ropsten") {
-    setCurrency("RopstenEther")
-    setSymbol("rEth")
-  } else if(chain === "Rinkeby") {
-    setCurrency("RinkebyEther")
-    setSymbol("rEth")
+  if(chain === "Goerli") {
+    setCurrency("Ether")
+    setSymbol("Eth")
+  } else if(chain === "Sepolia") {
+    setCurrency("Sepolia")
+    setSymbol("SepoliaETH")
   } else if(chain === "polygon") {
     setCurrency("Matic")
     setSymbol("Matic")
@@ -162,23 +162,23 @@ const saveTx = async () => {
 
   useEffect(() => {
     ethereum.on("chainChanged", async (chainId) => {
-      if(chainId === "0x3") {
-        setChain("Ropsten")
-        setCurrency("RopstenEther")
-        setSymbol("rEth")
-        setPaypalContractAddress('0xa02b2CCE714f874AD7593f50012c5d3756BF2773')
-        setExplorer("https://ropsten.etherscan.io")
-      } else if(chainId === "0x4") {
-        setChain("Rinkeby")
-        setCurrency("RinkebyEther")
-        setSymbol("rEth")
-        setPaypalContractAddress('0x6170b96101557cc11F076AA3907f7FF87Db54EE7')
-        setExplorer("https://rinkeby.etherscan.io")
+      if(chainId === "0x5") {
+        setChain("Goerli")
+        setCurrency("Ether")
+        setSymbol("Eth")
+        setPaypalContractAddress('0x60532B881dB44785E6F36DB5c4Bd3971b072E42D')
+        setExplorer("https://goerli.etherscan.io")
+      } else if(chainId === "0xaa36a7") {
+        setChain("Sepolia")
+        setCurrency("Sepolia")
+        setSymbol("SepoliaETH")
+        setPaypalContractAddress('0x3A6C95B553EB37003299357638fF7D5B5F79bdfe')
+        setExplorer("https://sepolia.etherscan.io")
       } else if(chainId === "0x13881") {
         setChain("Polygon")
         setCurrency("Matic")
         setSymbol("Matic")
-        setPaypalContractAddress('0x9Ad232e2D3812d5E915B864119f8212D51BFB9F5')
+        setPaypalContractAddress('0x04A741126973A330Cf8CB81EB056017864766c12')
         setExplorer("https://mumbai.polygonscan.com")
       } else {
         setLogin(false);
